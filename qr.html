@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR de mi Página</title>
+
+  <style>
+    body{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      margin:0;
+      background:#f0f0f0;
+      font-family:Arial, sans-serif;
+      text-align:center;
+    }
+    #qrcode{
+      padding:20px;
+      background:white;
+      border-radius:15px;
+      box-shadow:0 0 15px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>QR de mi página</h1>
+  <div id="qrcode"></div>
+
+  <!-- Librería para generar QR -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <script>
+    // Cambiá el link por el de tu GitHub Pages
+    const enlace = "https://villalobomiguel1234-code.github.io/Cubo-Magico/";
+
+    new QRCode(document.getElementById("qrcode"), {
+      text: enlace,
+      width: 220,
+      height: 220,
+      colorDark : "#000000",
+      colorLight : "#ffffff",
+      correctLevel : QRCode.CorrectLevel.H
+    });
+  </script>
+
+</body>
+</html>
